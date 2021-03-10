@@ -17,4 +17,15 @@ class Vendor
     @inventory[item] = 0 if @inventory[item].nil?
     @inventory[item] += amount
   end
+
+  def potential_revenue
+    items = @inventory.keys
+    summed_items = items.sum do |item|
+      item.price
+    end
+    amounts = @inventory.values
+    amounts.each do |amount|
+      
+    end
+  end
 end

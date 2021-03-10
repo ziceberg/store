@@ -1,7 +1,33 @@
 class Market
-  attr_reader :name
-  
+  attr_reader :name,
+              :vendors
+
   def initialize(name)
     @name = name
+    @vendors = []
   end
+
+  def add_vendor(vendor)
+    @vendors << vendor
+  end
+
+  def vendor_names
+    @vendors.map do |vendor|
+      vendor.name
+    end
+  end
+
+  # def vendors_that_sell(item)
+  #   items = []
+  #   @vendors.each do |vendor|
+  #     vendor.inventory.map do |inventory_item|
+  #       items << inventory_item[0]
+  #     end
+  #   end
+  #   @vendors.find_all do |vendor|
+  #     items.each do |item|
+  #       item == vendor.inventory.key
+  #     end
+  #   end
+  # end
 end
